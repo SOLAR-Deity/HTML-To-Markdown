@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "HTML 目录助手",
+  "version": "1.2.1",
+  "description": "像 Typora 一样为网页和本地 HTML 自动生成可点击的目录层级。",
+  "permissions": ["storage", "activeTab", "scripting", "clipboardWrite"],
+  "host_permissions": ["<all_urls>", "file:///*"],
+  "action": {
+    "default_title": "HTML 目录助手",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>", "file:///*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-toc": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "开关页面目录"
+    }
+  }
+}

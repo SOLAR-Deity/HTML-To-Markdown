@@ -1,0 +1,259 @@
+#html-toc-assistant-root {
+  all: initial;
+  position: fixed;
+  z-index: 2147483646;
+  top: 18px;
+  right: 18px;
+  width: 420px;
+  height: 520px;
+  box-sizing: border-box;
+  min-width: 280px;
+  max-width: min(calc(100vw - 24px), 820px);
+  min-height: 180px;
+  max-height: min(calc(100vh - 24px), 820px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  resize: none;
+  isolation: isolate;
+  color: #24292f;
+  background: rgba(255, 255, 255, .97);
+  border: 1px solid rgba(27, 31, 36, .16);
+  border-radius: 12px;
+  box-shadow: 0 14px 40px rgba(27, 31, 36, .18);
+  font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+  backdrop-filter: blur(12px);
+}
+#html-toc-assistant-root[hidden],
+#html-toc-assistant-root [hidden] {
+  display: none !important;
+}
+#html-toc-assistant-root * {
+  box-sizing: border-box;
+}
+#html-toc-assistant-root .html-toc-header,
+#html-toc-assistant-root .html-toc-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: none;
+  padding: 10px 12px;
+  background: linear-gradient(135deg, #f7f9fc, #eef4ff);
+}
+#html-toc-assistant-root .html-toc-header {
+  border-bottom: 1px solid #e7ebf0;
+  cursor: move;
+  user-select: none;
+}
+#html-toc-assistant-root .html-toc-header strong {
+  font-size: 14px;
+}
+#html-toc-assistant-root .html-toc-actions {
+  display: flex;
+  gap: 3px;
+}
+#html-toc-assistant-root .html-toc-actions .html-toc-copy {
+  width: auto;
+  padding: 0 7px;
+  font-size: 11px;
+  font-weight: 600;
+}
+#html-toc-assistant-root button {
+  all: unset;
+  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  flex: none;
+  color: #57606a;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 22px;
+}
+#html-toc-assistant-root button:hover {
+  color: #0969da;
+  background: #dbeafe;
+}
+#html-toc-assistant-root button:focus-visible {
+  outline: 2px solid #0969da;
+  outline-offset: 1px;
+}
+#html-toc-assistant-root .html-toc-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 7px 6px;
+}
+#html-toc-assistant-root nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+#html-toc-assistant-root .html-toc-node {
+  min-width: 0;
+}
+#html-toc-assistant-root .html-toc-row {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  min-height: 28px;
+}
+#html-toc-assistant-root .html-toc-children {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin-left: 16px;
+  padding-left: 5px;
+  border-left: 1px solid rgba(9, 105, 218, .16);
+}
+#html-toc-assistant-root .html-toc-toggle,
+#html-toc-assistant-root .html-toc-toggle-spacer {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 24px;
+  margin: 0 1px 0 0;
+  color: #57606a;
+  text-align: center;
+  font-size: 13px;
+  line-height: 24px;
+}
+#html-toc-assistant-root .html-toc-toggle:hover {
+  color: #0969da;
+  background: #dbeafe;
+}
+#html-toc-assistant-root nav a {
+  flex: 1 1 auto;
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  padding: 4px 8px 4px 4px;
+  color: #57606a;
+  border-radius: 6px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color .15s, background .15s;
+}
+#html-toc-assistant-root nav a:hover {
+  color: #0969da;
+  background: #eaf3ff;
+}
+#html-toc-assistant-root .html-toc-empty {
+  margin: 12px 6px;
+  color: #8c959f;
+  text-align: center;
+}
+#html-toc-assistant-root .html-toc-footer {
+  padding: 7px 12px;
+  color: #8c959f;
+  font-size: 11px;
+  border-top: 1px solid #e7ebf0;
+}
+#html-toc-assistant-root .html-toc-footer button {
+  width: auto;
+  height: auto;
+  padding: 2px 5px;
+  color: #0969da;
+  font-size: 11px;
+  line-height: 1.4;
+}
+#html-toc-assistant-root .html-toc-menu {
+  position: absolute;
+  z-index: 10;
+  top: 40px;
+  right: 8px;
+  min-width: 230px;
+  padding: 5px;
+  background: #ffffff;
+  border: 1px solid rgba(27, 31, 36, .16);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(27, 31, 36, .22);
+}
+#html-toc-assistant-root .html-toc-menu button {
+  all: unset;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 8px 9px;
+  cursor: pointer;
+  color: #384650;
+  border-radius: 6px;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.4;
+}
+#html-toc-assistant-root .html-toc-menu button:hover,
+#html-toc-assistant-root .html-toc-menu button:focus-visible {
+  color: #0969da;
+  background: #eaf3ff;
+}
+#html-toc-assistant-root .html-toc-toast {
+  position: absolute;
+  z-index: 11;
+  left: 12px;
+  right: 12px;
+  bottom: 40px;
+  padding: 8px 10px;
+  pointer-events: none;
+  color: #ffffff;
+  background: rgba(31, 35, 40, .94);
+  border-radius: 7px;
+  text-align: center;
+  font-size: 11px;
+  box-shadow: 0 8px 22px rgba(27, 31, 36, .2);
+}
+
+/* Explicit hit areas make all eight resize directions reliable in Chromium. */
+#html-toc-assistant-root .html-toc-resizer {
+  position: absolute;
+  z-index: 5;
+  display: block;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  user-select: none;
+  touch-action: none;
+}
+#html-toc-assistant-root .html-toc-resizer-n,
+#html-toc-assistant-root .html-toc-resizer-s {
+  left: 12px;
+  right: 12px;
+  height: 10px;
+}
+#html-toc-assistant-root .html-toc-resizer-n { top: 0; cursor: ns-resize; }
+#html-toc-assistant-root .html-toc-resizer-s { bottom: 0; cursor: ns-resize; }
+#html-toc-assistant-root .html-toc-resizer-e,
+#html-toc-assistant-root .html-toc-resizer-w {
+  top: 12px;
+  bottom: 12px;
+  width: 10px;
+}
+#html-toc-assistant-root .html-toc-resizer-e { right: 0; cursor: ew-resize; }
+#html-toc-assistant-root .html-toc-resizer-w { left: 0; cursor: ew-resize; }
+#html-toc-assistant-root .html-toc-resizer-ne,
+#html-toc-assistant-root .html-toc-resizer-nw,
+#html-toc-assistant-root .html-toc-resizer-se,
+#html-toc-assistant-root .html-toc-resizer-sw {
+  width: 16px;
+  height: 16px;
+}
+#html-toc-assistant-root .html-toc-resizer-ne { top: 0; right: 0; cursor: nesw-resize; }
+#html-toc-assistant-root .html-toc-resizer-nw { top: 0; left: 0; cursor: nwse-resize; }
+#html-toc-assistant-root .html-toc-resizer-se { right: 0; bottom: 0; cursor: nwse-resize; }
+#html-toc-assistant-root .html-toc-resizer-sw { bottom: 0; left: 0; cursor: nesw-resize; }
+
+#html-toc-assistant-root.collapsed {
+  width: 116px !important;
+  height: auto !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+#html-toc-assistant-root.collapsed .html-toc-body,
+#html-toc-assistant-root.collapsed .html-toc-footer,
+#html-toc-assistant-root.collapsed .html-toc-resizer,
+#html-toc-assistant-root.collapsed .html-toc-menu {
+  display: none !important;
+}

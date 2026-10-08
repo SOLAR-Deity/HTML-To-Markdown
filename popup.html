@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>HTML 目录助手</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+  <main class="popup">
+    <div class="brand"><div class="brand-mark">☷</div><div><h1>HTML 目录助手</h1><p>像 Typora 一样浏览页面结构</p></div></div>
+    <section class="switch-row"><div><strong>显示页面目录</strong><span id="status">正在读取状态…</span></div><label class="switch"><input id="enabled" type="checkbox"><span></span></label></section>
+    <button id="refresh" class="primary">↻ 刷新当前页面目录</button>
+    <p id="hint" class="hint"></p>
+    <div class="tips"><strong>使用提示</strong><ul><li>目录会固定显示在页面右上角。</li><li>支持 h1 到 h6 标题，并自动缩进层级。</li><li>打开本地 HTML 前，请在扩展详情中开启“允许访问文件 URL”。</li></ul></div>
+    <div class="shortcut">快捷键：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Y</kbd></div>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

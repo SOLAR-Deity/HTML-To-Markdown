@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+body { width: 320px; margin: 0; color: #24292f; background: #fff; font: 13px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; }
+.popup { padding: 18px; }
+.brand { display: flex; gap: 10px; align-items: center; margin-bottom: 18px; }
+.brand-mark { width: 38px; height: 38px; border-radius: 10px; color: #fff; background: linear-gradient(135deg, #2563eb, #7c3aed); font-size: 25px; line-height: 38px; text-align: center; }
+h1 { margin: 0; font-size: 16px; }
+.brand p { margin: 2px 0 0; color: #8c959f; font-size: 11px; }
+.switch-row { display: flex; align-items: center; justify-content: space-between; padding: 12px; border: 1px solid #d8dee4; border-radius: 10px; background: #f6f8fa; }
+.switch-row strong, .switch-row span { display: block; }
+.switch-row span { margin-top: 2px; color: #8c959f; font-size: 11px; }
+.switch { position: relative; width: 40px; height: 22px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.switch span { position: absolute; inset: 0; margin: 0; cursor: pointer; border-radius: 20px; background: #afb8c1; transition: .2s; }
+.switch span:before { content: ""; position: absolute; width: 18px; height: 18px; left: 2px; top: 2px; border-radius: 50%; background: #fff; transition: .2s; box-shadow: 0 1px 3px #0003; }
+.switch input:checked + span { background: #2563eb; }
+.switch input:checked + span:before { transform: translateX(18px); }
+.primary { width: 100%; margin-top: 10px; padding: 9px 12px; cursor: pointer; color: #fff; border: 0; border-radius: 8px; background: #2563eb; font: inherit; }
+.primary:hover { background: #1d4ed8; }
+.primary:disabled { cursor: default; opacity: .5; }
+.hint { min-height: 16px; margin: 8px 2px 0; color: #cf222e; font-size: 11px; }
+.tips { margin-top: 12px; padding: 10px 12px; border-radius: 8px; background: #f6f8fa; color: #57606a; font-size: 11px; }
+.tips strong { color: #24292f; }
+.tips ul { margin: 5px 0 0; padding-left: 17px; }
+.tips li { margin: 2px 0; }
+.shortcut { margin-top: 12px; color: #8c959f; text-align: center; font-size: 11px; }
+kbd { padding: 1px 4px; border: 1px solid #d0d7de; border-bottom-width: 2px; border-radius: 4px; background: #f6f8fa; font-size: 10px; }
