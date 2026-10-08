@@ -1,0 +1,17 @@
+# Packaged extension builds
+dist/
+*.zip
+
+# Dependencies
+node_modules/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

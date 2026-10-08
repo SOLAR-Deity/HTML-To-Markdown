@@ -1,0 +1,33 @@
+name: Validate extension
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate manifest
+        run: |
+          node -e "const fs = require('fs'); const m = JSON.parse(fs.readFileSync('manifest.json', 'utf8')); if (m.manifest_version !== 3) process.exit(1); console.log(m.name, m.version);"
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check background.js
+          node --check content.js
+          node --check popup.js
